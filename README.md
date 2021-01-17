@@ -1,1 +1,1 @@
-# Data_Course_NIELSEN
+# Data_Course_NIELSENThis README file contains information about my uploaded assignments
