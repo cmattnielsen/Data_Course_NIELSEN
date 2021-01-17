@@ -7,3 +7,4 @@ This README file is the gateway to me better using my computer. Read it with lov
 This is my 7th time pushing things to my github. I am catching on now.
 8th time is down now. I am ready.
 I can type what I want and it will appear on my website. Pretty cool if you ask me.
+10th time is nothing. I can do this all day.
