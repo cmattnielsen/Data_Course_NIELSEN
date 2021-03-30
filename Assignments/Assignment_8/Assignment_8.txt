@@ -1,0 +1,7 @@
+Assignment 8
+
+1. For sure when I was messing around trying to see what my data would do a lot of it was meaningless. Not meaningless in the sense that it was a waste of time because it wasn't, but it was not worth anything because my hypothetical plant would not grow under those conditions. 
+
+2. Often times I would come across that the data was not linear at all. You can often convert it but this article does an awesome job of explaining the different components and what to change etc. https://data-flair.training/blogs/r-nonlinear-regression/
+
+3. lm(response ~ predictor, data = nonlinear) This shows the relationship between the two variables and the coefficients (intercept) and the predictor value.
