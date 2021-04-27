@@ -48,7 +48,7 @@ ggplot(DNA_DF$DNA_Concentration_Katy,data = DNA_DF, mapping = aes(x=Year_Collect
 
 
 
-
+#boxplot katy
 
 
 every_nth = function(n) {
@@ -56,23 +56,64 @@ every_nth = function(n) {
 }
 
 ggplot(DNA_DF, aes(x=as.factor(Year_Collected), y=DNA_Concentration_Katy)) + 
-  stat_boxplot(geom ='errorbar',linetype= "") +
+  stat_boxplot(geom ='errorbar',linetype= 2) +
   geom_boxplot(linetype= "dashed", outlier.shape=1, ) + 
   labs(title= "Katy's Extractions", x="YEAR", y = "DNA Concentration") +
   theme(plot.title = element_text(hjust = 0.5)) +
   scale_x_discrete(breaks = every_nth(n = 2)) +
   geom_boxplot(aes(ymin=..lower.., ymax=..upper..)) + 
   theme_bw() +
+  ggsave("Katy's Extractions.png")
+  
+
+
+
+
+
+  
+  
+  panel.border = element_rect(linetype = "solid", 
+  colour = "black", fill = "NA", size = 0.5)
+ 
+  
+#boxplot ben  
+  
+  every_nth = function(n) {
+    return(function(x) {x[c(TRUE, rep(FALSE, n - 1))]})
+  }
+  
+  ggplot(DNA_DF, aes(x=as.factor(Year_Collected), y=DNA_Concentration_Ben)) + 
+    stat_boxplot(geom ='errorbar',linetype= 2) +
+    geom_boxplot(linetype= "dashed", outlier.shape=1, ) + 
+    labs(title= "Ben's Extractions", x="YEAR", y = "DNA Concentration") +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    scale_x_discrete(breaks = every_nth(n = 2)) +
+    geom_boxplot(aes(ymin=..lower.., ymax=..upper..)) + 
+    theme_bw() +
+    ggsave("Ben's Extractions.png")
+  
   
   stat_boxplot(width= 0.5)
   
   
   panel.border = element_rect(linetype = "solid", 
-  colour = "black", fill = "NA", size = 0.5)
+                              colour = "black", fill = "NA", size = 0.5)  
   
+  
+  
+  
+  
+   
   
 #comparing ben vs katy
 
+  
+  
+  
+  
+  
+  
+  
   dat <- as_tibble(DNA_DF)   
   
   dat %>% select(4:5)
@@ -106,12 +147,16 @@ chart.RelativePerformance(DNA_DF[3, 4:5, drop=FALSE], DNA_DF[3, 4:5, drop=FALSE]
 every_nth2 = function(n) {
   return(function(x) {x[c(TRUE, rep(FALSE, n - 2))]})
 }
+ 
 
+
+#downstairs
 
 Downstairs <- DNA_DF[DNA_DF$Lab == "Downstairs",]
 
 ggplot(Downstairs, aes(x=Date_Collected,y=DNA_Concentration_Ben)) +
-  geom_point(shape=1) + scale_x_discrete(breaks = every_nth(n = 2))
+  geom_point(shape=1) + scale_x_discrete(breaks = every_nth(n = 2)) +
+  ggsave("Ben_DNA_over_time.jpg")
 
 
 

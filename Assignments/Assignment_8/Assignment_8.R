@@ -17,6 +17,7 @@ ggplot(mtcars, aes(x=disp,y=mpg)) +
   theme_minimal()
 
 mod2 = lm(mpg ~ qsec, data = mtcars)
+
 ggplot(mtcars, aes(x=disp,y=qsec)) + 
   geom_point() + 
   geom_smooth(method = "lm") +
@@ -41,7 +42,7 @@ df$PredictionType <- "Real"
 hyp_preds$PredictionType <- "Hypothetical"
 fullpreds <- full_join(df,hyp_preds)
 
-ggplot(fullpreds,aes(x=disp,y=pred,color=PredictionType)) +
+g <- ggplot(fullpreds,aes(x=disp,y=pred,color=PredictionType)) +
   geom_point() +
   geom_point(aes(y=mpg),color="Black") +
   theme_minimal()
